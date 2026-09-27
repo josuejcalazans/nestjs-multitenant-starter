@@ -1,0 +1,85 @@
+{
+  "name": "nestjs-multitenant-starter",
+  "version": "1.0.0",
+  "description": "Multi-tenant SaaS API starter — AsyncLocalStorage tenant isolation, RBAC, JWT auth, dual persistence (in-memory / Prisma + PostgreSQL).",
+  "keywords": [
+    "nestjs",
+    "multi-tenancy",
+    "saas",
+    "rbac",
+    "jwt",
+    "async-local-storage",
+    "prisma",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Josue Jhonatas Calazans",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josuejcalazans/nestjs-multitenant-starter.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/main.js",
+    "dev": "nest start --watch",
+    "test": "jest",
+    "test:e2e": "jest --config ./test/jest-e2e.json --runInBand",
+    "test:cov": "jest --coverage",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11",
+    "@nestjs/core": "^11",
+    "@nestjs/jwt": "^11",
+    "@nestjs/platform-express": "^11",
+    "@nestjs/swagger": "^11",
+    "bcryptjs": "^3.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@nestjs/cli": "^11.0.24",
+    "@nestjs/testing": "^11",
+    "@prisma/client": "^6.12.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.3",
+    "@types/supertest": "^7.2.1",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.5.2",
+    "prettier": "^3.9.9",
+    "prisma": "^6.12.0",
+    "supertest": "^7.3.0",
+    "ts-jest": "^29.4.14",
+    "typescript": "~5.9.0",
+    "typescript-eslint": "^8.70.1"
+  }
+}
