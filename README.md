@@ -1,12 +1,17 @@
 # nestjs-multitenant-starter
 
 ![CI](https://github.com/josuejcalazans/nestjs-multitenant-starter/actions/workflows/ci.yml/badge.svg)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/josuejcalazans/nestjs-multitenant-starter)
+
+> **Live demo:** one click on **Deploy to Render** (free account, `render.yaml` included) —
+> provisions free Postgres, runs `prisma migrate deploy`, and serves Swagger UI at `/docs`
+> where you can register a tenant, log in, and exercise the whole API from the browser.
 
 A production-shaped NestJS starter that demonstrates **multi-tenancy done explicitly**:
 JWT claims carry the tenant, an `AsyncLocalStorage` context makes the tenant invisible
 to business code, and every repository call is scoped at the data layer.
 
-- **NestJS 12** + TypeScript strict
+- **NestJS 11** + TypeScript strict
 - **JWT auth** with global guard, `@Public` and `@Roles` decorators
 - **Tenant isolation** via `TenantContext` (AsyncLocalStorage) — services never pass
   `tenantId` around manually
